@@ -389,12 +389,9 @@ function OrderDrinkList({
   setOrderInfo = () => undefined
 }) {
   const isActive = (item) => {
-    // name is equal with product
-    const isTragetProduct = item?.name === dataItem?.name
     // uuid is exist in dataList
-    const isExist = dataList.some((item) => item?.uuid === dataItem?.uuid)
-
-    return isTragetProduct && !isExist
+    const isExist = dataItem?.uuid === item?.uuid
+    return isExist
   }
 
   const handleCalculateSum = (list) => {
